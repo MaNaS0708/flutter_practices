@@ -22,28 +22,29 @@ class MyApp extends StatelessWidget {
 
       home: Scaffold(
         body: Center(
-
           child: Container(
-            height: double.infinity,
-            width: double.infinity,
-            padding: EdgeInsets.all(50.0),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25.0),
-              color: Colors.red,
+            color: Colors.red,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+
+              children: [
+                Text(
+                  "Hello",
+                  style: TextStyle(
+                    fontSize: 100,
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  "World",
+                  style: TextStyle(
+                    fontSize: 100,
+                    color: Colors.white,
+                  ),
+                )
+              ],
             ),
-            child: Container(
-              height: 200.0,
-              width: 200.0,
-              padding: EdgeInsets.all(50.0),
-              decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25.0),
-              color: Colors.orange,
-              ),
-              child: Text(
-              'Hello world',
-              style: TextStyle(fontSize: 32),
-              ),
-          ),
           ),
         ),
       ),
