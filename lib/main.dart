@@ -21,32 +21,9 @@ class MyApp extends StatelessWidget {
       ),
 
       home: Scaffold(
-        body: Center(
-          child: Container(
-            color: Colors.red,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-
-              children: [
-                Text(
-                  "Hello",
-                  style: TextStyle(
-                    fontSize: 100,
-                    color: Colors.white,
-                  ),
-                ),
-                Text(
-                  "World",
-                  style: TextStyle(
-                    fontSize: 100,
-                    color: Colors.white,
-                  ),
-                )
-              ],
-            ),
-          ),
-        ),
+        body: Image.asset('assets/image/wallpaper.jpg',
+            height: double.infinity,
+            fit: BoxFit.cover),
       ),
     );
   }
