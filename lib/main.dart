@@ -24,19 +24,27 @@ class MyApp extends StatelessWidget {
         body: Center(
 
           child: Container(
-            height: 200.0,
-            width: 200.0,
+            height: double.infinity,
+            width: double.infinity,
             padding: EdgeInsets.all(50.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25.0),
               color: Colors.red,
             ),
-            child: Text(
+            child: Container(
+              height: 200.0,
+              width: 200.0,
+              padding: EdgeInsets.all(50.0),
+              decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25.0),
+              color: Colors.orange,
+              ),
+              child: Text(
               'Hello world',
               style: TextStyle(fontSize: 32),
-            ),
+              ),
           ),
-
+          ),
         ),
       ),
     );
