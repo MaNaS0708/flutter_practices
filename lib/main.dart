@@ -3,16 +3,14 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MyApp());
 }
+//statefull: can refresh
+//stateless: cant refress
+//setstate: to refresh
 
-//stateless
-//material app
-//scaffold
-
-//stateless
 class MyApp extends StatelessWidget {
   const MyApp ({super.key});
 
-  //material app
+
   @override
   Widget build(BuildContext context){
     return MaterialApp(
@@ -22,26 +20,62 @@ class MyApp extends StatelessWidget {
           seedColor: Colors.teal,
           brightness: Brightness.dark,
         ),
-      ),//Scaffold
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("My First App"),
-          centerTitle: true,
-        ),
-        drawer: Drawer(
-          child: Column(
-            children: [
-              DrawerHeader(
-                  child: Text('Drawer header')
-              ),
-              ListTile(
-                title: Text('logout'),
-              ),
-            ],
-          ),
-        ),
-
       ),
+      home: MyHome(),
     );
   }
 }
+
+class MyHome extends StatefulWidget {
+    const MyHome ({super.key});
+
+    @override
+    State <MyHome> createState() => _MyHomeState();
+}
+
+class _MyHomeState extends State<MyHome> {
+  //put all variables here...
+  int current_index = 0;
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      appBar: AppBar(
+      title: Text("My First App"),
+    centerTitle: true,
+    ),
+
+    body: current_index == 0
+        ? Center(
+            child: Text(
+                  'Hello from home'
+                  ),
+            ):
+            Center(
+              child: Text(
+                  'Hello from profile'
+              ),
+            ),
+
+    bottomNavigationBar: NavigationBar(
+      destinations: [
+        NavigationDestination(
+          icon: Icon(Icons.home),
+          label: 'Home',
+          ),
+        NavigationDestination(
+          icon: Icon(Icons.person),
+          label: 'Profile',
+        ),
+      ],
+      onDestinationSelected: (int value) {
+      setState(() {
+        current_index = value;
+      });
+      },
+      selectedIndex: current_index,
+    ),
+    );
+  }
+}
+
