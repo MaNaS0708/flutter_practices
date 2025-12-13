@@ -21,9 +21,23 @@ class MyApp extends StatelessWidget {
       ),
 
       home: Scaffold(
-        body: Image.asset('assets/image/wallpaper.jpg',
-            height: double.infinity,
-            fit: BoxFit.cover),
+        body: Stack(
+          children: [
+            Image.asset(
+                'assets/images/wallpaper.jpg',
+                fit: BoxFit.cover,
+                height: 300,
+            ),
+            SizedBox(
+              height: 300,
+              child: Center(
+                child: Text(
+                  'Hello'
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
