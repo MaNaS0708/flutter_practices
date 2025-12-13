@@ -28,48 +28,19 @@ class MyApp extends StatelessWidget {
           title: Text("My First App"),
           centerTitle: true,
         ),
-        floatingActionButton: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            FloatingActionButton(
-              onPressed: () {
-
-              },
-              child:
-              Icon(
-                Icons.add
+        drawer: Drawer(
+          child: Column(
+            children: [
+              DrawerHeader(
+                  child: Text('Drawer header')
               ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            FloatingActionButton(
-              onPressed: () {
-
-              },
-              child:
-              Icon(
-                  Icons.add
+              ListTile(
+                title: Text('logout'),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-        bottomNavigationBar: NavigationBar(
-          destinations: [
-            NavigationDestination(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
-          onDestinationSelected: (int value) {
-            print(value);
-          },
-          selectedIndex: 1,
-        ),
+
       ),
     );
   }
