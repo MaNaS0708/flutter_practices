@@ -26,16 +26,23 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text("My First App"),
-          leading: Icon(Icons.login),
-          actions: [
-            Text(
-              'halo'
+          centerTitle: true,
+        ),
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination(
+              icon: Icon(Icons.home),
+              label: 'Home',
             ),
-            Icon(
-                Icons.login
+            NavigationDestination(
+              icon: Icon(Icons.person),
+              label: 'Profile',
             ),
           ],
-          backgroundColor: Colors.teal,
+          onDestinationSelected: (int value) {
+            print(value);
+          },
+          selectedIndex: 1,
         ),
       ),
     );
