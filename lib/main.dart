@@ -4,53 +4,40 @@ void main() {
   runApp(MyApp());
 }
 
+//stateless
+//material app
+//scaffold
 
+//stateless
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp ({super.key});
 
+  //material app
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'my_first_app',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
+          seedColor: Colors.teal,
           brightness: Brightness.dark,
         ),
-        useMaterial3: true,
-      ),
+      ),//Scaffold
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('My First App'),
-          backgroundColor:
-          Theme.of(context).colorScheme.inversePrimary,
-          centerTitle: true,
-          leading: Icon(Icons.notifications,
-          color: Colors.red,
-          ),
-        ),
-        body: Wrap( //bring to next line if coudn't fit in width of screen bring the text down not individual widgit
-          children: [
+          title: Text("My First App"),
+          leading: Icon(Icons.login),
+          actions: [
             Text(
-              'hello nv kdfv dfv ndfv ',
+              'halo'
             ),
-            Text(
-                'hello kv nidf vjidf v',
-            ),
-            Text(
-                'hello kjv jnd vhd vhi sidv',
-            ),
-            Text(
-                'hello sgcvusdvubdhivbydv',
-            ),
-            Text(
-                'hello sfsevssevsev',
+            Icon(
+                Icons.login
             ),
           ],
-        )
+          backgroundColor: Colors.teal,
+        ),
       ),
     );
   }
-
 }
