@@ -30,30 +30,25 @@ class MyApp extends StatelessWidget {
           color: Colors.red,
           ),
         ),
-        body: Container(
-          child: Stack(
-            children: [
-              SizedBox(
-                height: 300,
-                child: Center(
-                  child: Text(
-                    'Hello',
-                    style: TextStyle(fontSize: 24),
-                  ),
-                ),
-              ),
-              ListTile(
-                leading: Icon(Icons.call, color: Colors.orange,),
-                tileColor: Colors.red,
-                title: Text('skfjbib'),
-                trailing: Text('skjgbug'),
-                onTap: () {
-                  print('clicked on this listtile');
-                },
-              )
-            ],
-          ),
-        ),
+        body: Wrap( //bring to next line if coudn't fit in width of screen bring the text down not individual widgit
+          children: [
+            Text(
+              'hello nv kdfv dfv ndfv ',
+            ),
+            Text(
+                'hello kv nidf vjidf v',
+            ),
+            Text(
+                'hello kjv jnd vhd vhi sidv',
+            ),
+            Text(
+                'hello sgcvusdvubdhivbydv',
+            ),
+            Text(
+                'hello sfsevssevsev',
+            ),
+          ],
+        )
       ),
     );
   }
