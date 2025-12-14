@@ -1,81 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/views/widgets/widget_tree.dart';
 
 void main() {
   runApp(MyApp());
 }
+
 //statefull: can refresh
 //stateless: cant refress
 //setstate: to refresh
 
-class MyApp extends StatelessWidget {
-  const MyApp ({super.key});
-
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context){
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.teal,
-          brightness: Brightness.dark,
-        ),
-      ),
-      home: MyHome(),
-    );
-  }
+  State<MyApp> createState() => _MyAppState();
 }
 
-class MyHome extends StatefulWidget {
-    const MyHome ({super.key});
+class _MyAppState extends State<MyApp> {
 
-    @override
-    State <MyHome> createState() => _MyHomeState();
-}
+int selectedIndex = 0;
 
-class _MyHomeState extends State<MyHome> {
-  //put all variables here...
-  int current_index = 0;
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-      title: Text("My First App"),
-    centerTitle: true,
-    ),
-
-    body: current_index == 0
-        ? Center(
-            child: Text(
-                  'Hello from home'
-                  ),
-            ):
-            Center(
-              child: Text(
-                  'Hello from profile'
-              ),
-            ),
-
-    bottomNavigationBar: NavigationBar(
-      destinations: [
-        NavigationDestination(
-          icon: Icon(Icons.home),
-          label: 'Home',
-          ),
-        NavigationDestination(
-          icon: Icon(Icons.person),
-          label: 'Profile',
-        ),
-      ],
-      onDestinationSelected: (int value) {
-      setState(() {
-        current_index = value;
-      });
-      },
-      selectedIndex: current_index,
-    ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(colorScheme: ColorScheme.fromSeed(
+        seedColor: Colors.teal,
+        brightness: Brightness.dark
+      )
+      ),
+      home: WidgetTree()
     );
   }
 }
-
